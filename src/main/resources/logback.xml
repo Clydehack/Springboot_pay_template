@@ -1,0 +1,2 @@
+<!-- 级别从高到低 OFF 、 FATAL 、 ERROR 、 WARN 、 INFO 、 DEBUG 、 TRACE 、 ALL -->
+<!-- 日志输出规则 根据当前ROOT级别，日志输出时，级别高于root默认的级别时 会输出 -->
