@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.template.ie.utils.CustomException;
 import com.template.ie.utils.JsonUtil;
+import com.template.ie.utils.TimeUtil;
 
 /**
  * @function:
  * 		此服务的统一入口
  * 		初步思考是在入口定义一个很简便易用的服务API，简便易用的交易对象(商品对象?)、账户对象，
- * 		数据流转中，一个人的账单里会增加多个商品。
+ * 		数据流转中，一个人的账单里会增加多个商品。应该只接账单信息，账单对象怎么设计更好？
  * 		然后交易的Package里的所有的支付类型各自来实现此API。
  * 		下一步假想一个整体的大型服务，
  * 		然后通过设计模式修整一下内部结构，使之更加合理
@@ -62,6 +63,7 @@ public class IntergrationPayController {
 	 */
 	@RequestMapping(value = "/entrance", method = {RequestMethod.GET, RequestMethod.POST})
 	public String entrance(HttpServletRequest request, HttpServletResponse response) {
+		long start = System.currentTimeMillis();
 		setHeader(response);
 		String result = "";
 		try {
@@ -76,6 +78,10 @@ public class IntergrationPayController {
 		} catch (Exception e) {
 			result = JsonUtil.resultJsonString("系统异常 请联系管理员", "XT00");
 			logger.error("result==>{},msg==>{}", result, e.getMessage());
+		} finally {
+			long end = System.currentTimeMillis();
+			logger.info("服务开始运行时间和运行用时:start==>{},spendTime==>{}",
+					TimeUtil.getNow(start),TimeUtil.getSpendTime(start, end));
 		}
 		return result;
 	}

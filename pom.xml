@@ -26,18 +26,20 @@
 
 	<dependencies>
 	
-		<!-- web项目必备 -->
+		<!-- web项目必备 - begin -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- web项目必备 - end -->
 
-		<!-- 单元测试必备 -->
+		<!-- 单元测试必备 - begin -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- 单元测试必备 - end -->
 		
 		<!-- DB - begin -->
 		<!-- windows 快速小型本地数据库 -->
@@ -86,6 +88,14 @@
 		</dependency>
 		<!-- logback - end -->
 		
+		<!-- 微信支付SDK - begin -->
+		<dependency>
+		    <groupId>com.github.wxpay</groupId>
+		    <artifactId>wxpay-sdk</artifactId>
+		    <version>0.0.3</version>
+		</dependency>
+		<!-- 微信支付SDK - end -->
+
 	</dependencies>
 
 	<build>
