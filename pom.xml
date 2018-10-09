@@ -53,12 +53,12 @@
 			<artifactId>HikariCP-java7</artifactId>
 			<version>2.4.9</version>
 		</dependency>
-		<!-- mybatis数据库框架 -->
+		<!-- mybatis数据库框架 
 		<dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>1.2.0</version>
-        </dependency>
+        </dependency>-->
         <!-- DB - end -->
         
         <!-- 热部署 - begin -->
@@ -95,6 +95,13 @@
 		    <version>0.0.3</version>
 		</dependency>
 		<!-- 微信支付SDK - end -->
+
+		<!-- 阿里json -->
+		<dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.35</version>
+        </dependency>
 
 	</dependencies>
 
